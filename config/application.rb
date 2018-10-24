@@ -33,10 +33,10 @@ module SampleApi
     config.api_only = true
 
     # Configure Rack Cors middleware to allow any origin, resource, headers and get/post/options methods
-    config.middleware.insert_before 0, "Rack::Cors" do
+    config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resources '*', headers: :any, methods: [:get, :post, :options]
+        resource '*', headers: :any, methods: [:get, :post, :options]
       end
     end
   end
